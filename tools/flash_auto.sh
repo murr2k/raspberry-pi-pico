@@ -50,12 +50,14 @@ find_pico_devices() {
     
     # Try to find Pico in bootloader mode
     BOOTLOADER_DEVICES=$(picotool info -a 2>/dev/null | grep -c "RP2040" || echo "0")
+    BOOTLOADER_DEVICES=$(echo $BOOTLOADER_DEVICES | tr -d '\n\r')
     
     # Try to find Pico running firmware
     RUNTIME_DEVICES=$(lsusb | grep -c "Raspberry Pi" || echo "0")
+    RUNTIME_DEVICES=$(echo $RUNTIME_DEVICES | tr -d '\n\r')
     
-    echo "Bootloader devices: $BOOTLOADER_DEVICES"
-    echo "Runtime devices: $RUNTIME_DEVICES"
+    print_status "Bootloader devices: $BOOTLOADER_DEVICES"
+    print_status "Runtime devices: $RUNTIME_DEVICES"
     
     if [ "$BOOTLOADER_DEVICES" -gt 0 ]; then
         return 0  # Pico in bootloader mode found

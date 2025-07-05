@@ -20,7 +20,7 @@
 
 // Pin definitions
 #define LED_PIN 25          // Onboard LED pin
-#define BLINK_DELAY_MS 500  // Blink delay in milliseconds
+#define BLINK_DELAY_MS 250  // Blink delay in milliseconds (doubled rate)
 
 /**
  * @brief Main function - entry point of the program

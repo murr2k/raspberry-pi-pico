@@ -210,7 +210,39 @@ This will show detailed USB device detection and reset operations.
 
 ## 🔧 Troubleshooting
 
-### Issue: "No Pico devices found"
+### Issue: "No Pico devices found" (WSL2)
+**Root Cause:** WSL2 cannot directly access USB devices due to virtualization limitations.
+
+**Solutions:**
+1. **USB/IP Passthrough (Advanced):**
+   ```bash
+   # Install usbipd-win on Windows, then:
+   # In Windows PowerShell (as Admin):
+   usbipd wsl attach --busid <BUSID>
+   ```
+
+2. **Hybrid Workflow (Recommended):**
+   ```bash
+   # Build in WSL2:
+   make build TARGET=blinky
+   
+   # Flash from Windows:
+   tools/flash_pico_windows.bat -t blinky
+   ```
+
+3. **Manual Copy Method:**
+   ```bash
+   # Build in WSL2
+   make build TARGET=blinky
+   
+   # Copy UF2 from Windows Explorer:
+   # From: \\wsl$\Ubuntu\...\raspberry-pi-pico\examples\c\build\blinky.uf2
+   # To: D:\ (Pico drive)
+   ```
+
+See `WSL_USB_SETUP.md` for detailed WSL2 setup instructions.
+
+### Issue: "No Pico devices found" (Native Linux)
 **Solution:**
 ```bash
 # Check USB connection
