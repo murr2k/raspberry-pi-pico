@@ -1,0 +1,28 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Pico",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:PICO_SDK_PATH}/src/**",
+                "${env:PICO_SDK_PATH}/lib/**",
+                "/usr/arm-none-eabi/include/**"
+            ],
+            "defines": [
+                "PICO_BOARD=pico",
+                "PICO_PLATFORM=rp2040",
+                "PICO_ON_DEVICE=1"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compilerArgs": [
+                "-mcpu=cortex-m0plus",
+                "-mthumb"
+            ]
+        }
+    ]
+}

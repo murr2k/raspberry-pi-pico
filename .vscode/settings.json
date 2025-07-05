@@ -1,0 +1,20 @@
+{
+    "cmake.configureSettings": {
+        "PICO_SDK_PATH": "/home/murr2k/projects/agentic/ruv-swarm/pico-sdk"
+    },
+    "cmake.buildDirectory": "${workspaceFolder}/examples/c/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/examples/c",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "C_Cpp.default.compilerPath": "/usr/bin/arm-none-eabi-gcc",
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "pico.h": "c",
+        "stdlib.h": "c"
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.cwd": "${workspaceFolder}/examples/c",
+    "cortex-debug.armToolchainPath": "/usr/bin",
+    "cortex-debug.openocdPath": "/usr/bin/openocd"
+}

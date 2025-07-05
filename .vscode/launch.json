@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Pico (OpenOCD)",
+            "cwd": "${workspaceFolder}/examples/c",
+            "executable": "${workspaceFolder}/examples/c/build/temperature_enhanced.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": [
+                "${workspaceFolder}/tools/openocd_config.cfg"
+            ],
+            "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
+            "runToEntryPoint": "main",
+            "postRestartCommands": [
+                "break main",
+                "continue"
+            ]
+        },
+        {
+            "name": "Debug Pico (picoprobe)",
+            "cwd": "${workspaceFolder}/examples/c", 
+            "executable": "${workspaceFolder}/examples/c/build/temperature_enhanced.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/picoprobe.cfg",
+                "target/rp2040.cfg"
+            ],
+            "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
+            "runToEntryPoint": "main"
+        }
+    ]
+}

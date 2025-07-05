@@ -1,0 +1,77 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Enhanced Temperature",
+            "type": "shell",
+            "command": "make",
+            "args": ["build", "TARGET=temperature_enhanced"],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            },
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Flash Runtime Temperature",
+            "type": "shell", 
+            "command": "make",
+            "args": ["flash-runtime-compile", "TARGET=temperature_enhanced"],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            },
+            "dependsOn": "Build Enhanced Temperature",
+            "presentation": {
+                "echo": true,
+                "reveal": "always", 
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Flash Auto Temperature",
+            "type": "shell",
+            "command": "make", 
+            "args": ["flash-auto", "TARGET=temperature_enhanced"],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            },
+            "dependsOn": "Build Enhanced Temperature"
+        },
+        {
+            "label": "Monitor Serial",
+            "type": "shell",
+            "command": "make",
+            "args": ["monitor"],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            },
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "make",
+            "args": ["clean"],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            }
+        }
+    ]
+}
