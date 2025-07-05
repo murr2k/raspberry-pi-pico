@@ -55,6 +55,22 @@
             "options": {
                 "cwd": "${workspaceFolder}/examples/c"
             },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Monitor Basic (Screen)",
+            "type": "shell",
+            "command": "make",
+            "args": ["monitor-basic"],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/examples/c"
+            },
             "isBackground": true,
             "presentation": {
                 "echo": true,
