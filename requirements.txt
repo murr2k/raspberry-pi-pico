@@ -1,0 +1,36 @@
+# Python dependencies for MicroPython development and tools
+
+# MicroPython development tools
+adafruit-ampy>=1.1.0          # File transfer utility for MicroPython
+rshell>=0.0.32                 # Remote shell for MicroPython boards
+esptool>=4.5.1                 # Firmware flashing tool (useful for ESP32)
+mpremote>=1.20.0               # Official MicroPython remote control tool
+
+# Thonny IDE dependencies (optional)
+thonny>=4.0.0                  # MicroPython-friendly IDE
+
+# Serial communication
+pyserial>=3.5                  # Serial port access
+
+# Development utilities
+click>=8.0.0                   # CLI development framework
+colorama>=0.4.6                # Colored terminal output
+requests>=2.28.0               # HTTP library for testing web features
+
+# Documentation and testing
+pytest>=7.2.0                 # Testing framework
+mkdocs>=1.4.0                  # Documentation generator
+mkdocs-material>=8.5.0         # Material theme for docs
+
+# Code quality
+black>=22.0.0                  # Code formatter
+flake8>=5.0.0                  # Linting tool
+mypy>=0.991                    # Type checking
+
+# Optional: For advanced projects
+numpy>=1.24.0                  # Numerical computing (for data analysis)
+matplotlib>=3.6.0              # Plotting (for sensor data visualization)
+jupyter>=1.0.0                 # Jupyter notebooks for experimentation
+
+# Hardware simulation and testing
+circuitpython-typing>=1.9.0    # Type hints for CircuitPython/MicroPython
