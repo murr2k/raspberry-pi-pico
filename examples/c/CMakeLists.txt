@@ -48,7 +48,30 @@ pico_enable_stdio_usb(blink_led_enhanced 1)
 pico_enable_stdio_uart(blink_led_enhanced 1)
 pico_add_extra_outputs(blink_led_enhanced)
 
+# Temperature sensor example
+add_executable(temperature_sensor temperature_sensor.c)
+target_link_libraries(temperature_sensor 
+    pico_stdlib
+    hardware_adc
+    hardware_gpio
+)
+pico_enable_stdio_usb(temperature_sensor 1)
+pico_enable_stdio_uart(temperature_sensor 1)
+pico_add_extra_outputs(temperature_sensor)
+
+# Enhanced temperature sensor with runtime updates
+add_executable(temperature_enhanced temperature_enhanced.c)
+target_link_libraries(temperature_enhanced 
+    pico_stdlib
+    hardware_adc
+    hardware_gpio
+    runtime_update
+)
+pico_enable_stdio_usb(temperature_enhanced 1)
+pico_enable_stdio_uart(temperature_enhanced 1)
+pico_add_extra_outputs(temperature_enhanced)
+
 # Print build information
 message(STATUS "Building Raspberry Pi Pico examples")
-message(STATUS "Available targets: blinky, blink_led_enhanced")
+message(STATUS "Available targets: blinky, blink_led_enhanced, temperature_sensor, temperature_enhanced")
 message(STATUS "Output files will be generated in build directory")
