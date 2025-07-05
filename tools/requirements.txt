@@ -1,0 +1,17 @@
+# Python requirements for automated flashing tools
+
+# USB device communication
+pyusb>=1.2.1                    # USB device control and communication
+
+# File system monitoring for watch mode  
+watchdog>=3.0.0                 # Monitor file changes for auto-rebuild
+
+# Serial communication (optional)
+pyserial>=3.5                   # Serial port communication for debugging
+
+# Progress bars and UI (optional)
+tqdm>=4.64.0                    # Progress bars for flashing operations
+click>=8.0.0                    # CLI framework for advanced commands
+
+# System utilities
+psutil>=5.9.0                   # System and process utilities
